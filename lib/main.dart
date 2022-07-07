@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:aguchi_prueba1/src/routes/routes.dart';
-import 'package:aguchi_prueba1/src/widgets/Error404.dart';
+import 'package:aguchi_prueba1/src/widgets/error404.dart';
 
 void main() => runApp(const MyApp());
 

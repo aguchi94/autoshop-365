@@ -3,43 +3,42 @@ import 'dart:async';
 import 'package:barcode_scan2/barcode_scan2.dart';
 import 'package:flutter/services.dart';
 
-class barCodePage extends StatefulWidget {
-  const barCodePage({ Key? key }) : super(key: key);
+class BarcodeScan extends StatefulWidget {
 
   @override
-  State<barCodePage> createState() => _barCodePageState();
+  State<BarcodeScan> createState() => _BarcodeScanState();
 }
 
-class _barCodePageState extends State<barCodePage> {
-
+class _BarcodeScanState extends State<BarcodeScan> {
   String barcode = ("");
-
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [ 
-        AlertDialog(
-          title: const Text("Escanear"),
-          content: Text(barcode),
-          actions: [
-            FlatButton(
-              child: Text("Ok"),
+    return Center(
+        child: Container(
+            width: 300,
+            height: 120,
+            margin: const EdgeInsets.all(5),
+            decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.black45,
+                      offset: Offset(2, 4),
+                      blurRadius: 6)
+                ]),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  primary: const Color.fromARGB(233, 94, 201, 234),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0))),
+              child: Image.asset('assets/cod_barraNN.png'),
               onPressed: barcodeScanning,
-            ), 
-            FlatButton(
-              child: Text("Cancelar"),
-              onPressed: (){},
-            ),
-          ]
-         )
-      ]
-    );
-  }
+            )));
+            
+     }
 
-
-  //FUNCION ESCANEAR
-   Future barcodeScanning() async {
+  Future barcodeScanning() async {
     try {
       ScanResult qrScanResult = await BarcodeScanner.scan();
       String qrResult = qrScanResult.rawContent;
@@ -57,5 +56,5 @@ class _barCodePageState extends State<barCodePage> {
     } catch (e) {
       setState(() => barcode = "Unknown error: $e");
     }
-  }
+   }
 }
