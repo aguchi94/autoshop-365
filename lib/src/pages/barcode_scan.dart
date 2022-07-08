@@ -1,3 +1,4 @@
+import 'package:aguchi_prueba1/src/widgets/customButton.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:barcode_scan2/barcode_scan2.dart';
@@ -14,30 +15,12 @@ class _BarcodeScanState extends State<BarcodeScan> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: Container(
-            width: 300,
-            height: 120,
-            margin: const EdgeInsets.all(5),
-            decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(20)),
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.black45,
-                      offset: Offset(2, 4),
-                      blurRadius: 6)
-                ]),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  primary: const Color.fromARGB(233, 94, 201, 234),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0))),
-              child: Image.asset('assets/cod_barraNN.png'),
-              onPressed: barcodeScanning,
-            )));
-            
-     }
-
+    return CustomButton(
+      imageRoute: 'assets/cod_barraNN.png', 
+      onPressed: barcodeScanning
+      );
+  }
+  
   Future barcodeScanning() async {
     try {
       ScanResult qrScanResult = await BarcodeScanner.scan();
@@ -56,5 +39,7 @@ class _BarcodeScanState extends State<BarcodeScan> {
     } catch (e) {
       setState(() => barcode = "Unknown error: $e");
     }
-   }
+  }
 }
+
+  
