@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:aguchi_prueba1/src/pages/barcode_scan.dart';
 import 'package:aguchi_prueba1/src/widgets/customButton.dart';
+import 'package:aguchi_prueba1/src/widgets/helpButton.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -21,6 +22,7 @@ class _HomePageState extends State<HomePage> {
   void _pagError() => Navigator.of(context).pushNamed('/error404');
   void _cargarSaldo() => Navigator.of(context).pushNamed('/cargar');
   void _userPage() => Navigator.of(context).pushNamed('/user');
+  void _addCart() => Navigator.of(context).pushNamed('/addtocart');
 
   @override
   Widget build(BuildContext context) {
@@ -38,10 +40,20 @@ class _HomePageState extends State<HomePage> {
         ),
         child: ListView(children: <Widget>[
 //SALDO
-          CustomButton(
-              imageRoute: 'assets/usuarioNN.png',
-              onPressed: () => _userPage()
-              ),
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Row(
+              children: [
+                CustomButton(
+                    imageRoute: 'assets/usuarioNN.png',
+                    onPressed: () => _userPage()
+                    ),
+                HelpButton(
+                  onPressed:(() => {} )
+                )
+              ]
+            ),
+          ),
           const SizedBox(height: 5),
 
 //BOTON ESCANEAR
@@ -65,7 +77,9 @@ class _HomePageState extends State<HomePage> {
 
 //LISTA DE PRODUCTOS
           CustomButton(
-              imageRoute: 'assets/listadoNN.png', onPressed: () => _pagError()),
+              imageRoute: 'assets/listadoNN.png', 
+              onPressed: () => _addCart()
+              ),
           const SizedBox(height: 5),
 
 //ABRIR PUERTA
@@ -107,3 +121,5 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+

@@ -15,8 +15,8 @@ class _UserPageState extends State<UserPage> {
         elevation: 0,
         shadowColor: const Color.fromARGB(233, 94, 201, 234),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(233, 94, 201, 234),
-        title: Text("Datos del Usuario"),
+        backgroundColor: const Color.fromARGB(233, 94, 201, 234),
+        title: const Text("Datos del Usuario"),
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -45,7 +45,7 @@ class _UserPageState extends State<UserPage> {
                         ),
                         Icon(Icons.house,
                         size: 50,
-                        color: Colors.blue,
+                        color: Colors.red ,
                         ),
                         SizedBox(
                           width: 50

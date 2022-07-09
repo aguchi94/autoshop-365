@@ -20,7 +20,7 @@ class _CargarSaldoState extends State<CargarSaldo> {
         shadowColor: const Color.fromARGB(233, 94, 201, 234),
         centerTitle: true,
         backgroundColor: Color.fromARGB(233, 94, 201, 234),
-        title: Text("Cargar Saldo"),
+        title: const Text("Cargar Saldo"),
       ),
       body: Container(
         decoration: const BoxDecoration(
