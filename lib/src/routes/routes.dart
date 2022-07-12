@@ -1,5 +1,6 @@
 import 'package:aguchi_prueba1/src/pages/barcode_scan.dart';
 import 'package:aguchi_prueba1/src/pages/charge_balance.dart';
+import 'package:aguchi_prueba1/src/pages/shopping_cart.dart';
 import 'package:aguchi_prueba1/src/pages/user_page.dart';
 import 'package:flutter/material.dart';
 import 'package:aguchi_prueba1/src/pages/home.dart';
@@ -14,5 +15,6 @@ Map<String, WidgetBuilder> getApplicationRoutes(){
     '/barcode' : ( BuildContext context )=> BarcodeScan(),
     '/cargar' : ( BuildContext context )=> const CargarSaldo(),
     '/user' : ( BuildContext context )=> const UserPage(),
+    '/cart' : ( BuildContext context )=> const Cart(),
   };
 }

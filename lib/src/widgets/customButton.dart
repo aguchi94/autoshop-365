@@ -8,9 +8,9 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
         child: Container(
-            width: 300,
+            width: 290,
             height: 120,
-            margin: const EdgeInsets.all(5),
+            margin: const EdgeInsets.all(10),
             decoration: const BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(20)),
                 boxShadow: [
@@ -21,7 +21,7 @@ class CustomButton extends StatelessWidget {
                 ]),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  primary: const Color.fromARGB(233, 94, 201, 234),
+                  primary: const Color.fromARGB(233, 177, 215, 226),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20.0))),
               child: Image.asset(imageRoute, width: 170),

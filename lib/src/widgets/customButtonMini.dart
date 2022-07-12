@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CustomButtonMini extends StatelessWidget {
-  final String imageRoute;
+  final Widget child;
   final VoidCallback onPressed;
-  const CustomButtonMini({required this.imageRoute, required this.onPressed});
+  const CustomButtonMini({required this.child, required this.onPressed});
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -21,10 +21,10 @@ class CustomButtonMini extends StatelessWidget {
                 ]),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  primary: const Color.fromARGB(233, 94, 201, 234),
+                  primary: const Color.fromARGB(233, 177, 215, 226),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20.0))),
-              child: Image.asset(imageRoute, width: 170),
+              child: child,
               onPressed: onPressed,
             )));
   }

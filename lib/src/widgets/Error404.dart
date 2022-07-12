@@ -1,3 +1,4 @@
+import 'package:aguchi_prueba1/src/widgets/appBar.dart';
 import 'package:flutter/material.dart';
 
 
@@ -15,19 +16,7 @@ class _Error404pageState extends State<Error404page> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white70,
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors:[
-              Colors.black12,
-              Color.fromARGB(233, 94, 201, 234),
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter, 
-          ),
-        ),
+    return CustomAppBar(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -42,14 +31,14 @@ class _Error404pageState extends State<Error404page> {
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 elevation: 8.0,
-                primary: const Color.fromARGB(233, 94, 201, 234)
+                primary: Colors.green
                 ),
               onPressed: () => _volverMenu(), 
-              child: const Text("Volver al Menú Principal", style: TextStyle(color: Colors.black54),),
+              child: const Text("Volver al Menú Principal",
+                ),
               )
           ],
         )
-      ),
-    );
+      );
   }
 }

@@ -9,7 +9,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
 
-void registrarse() => Navigator.of(context).pushNamed('/barcode');
+void error404() => Navigator.of(context).pushNamed('/error404');
 
 void iniciarSesion() => Navigator.of(context).pushReplacementNamed('/home');
 
@@ -26,9 +26,9 @@ void iniciarSesion() => Navigator.of(context).pushReplacementNamed('/home');
         decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Colors.white,
-                  Colors.white38,
-                  Color.fromARGB(255, 132, 223, 250),
+                  Colors.white60,
+                  Colors.white30,
+                  Color.fromARGB(233, 128, 212, 235),
                 ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -85,10 +85,9 @@ void iniciarSesion() => Navigator.of(context).pushReplacementNamed('/home');
 //Boton Registrarse
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-
+                            padding: const EdgeInsets.all(15),
                             elevation: 5.0,
                             primary:const Color.fromARGB(233, 94, 201, 234),
-                            shape: const StadiumBorder()
                           ),
                           child: const Text("Iniciar Sesión", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),                          
                           onPressed: () => iniciarSesion(),
@@ -98,15 +97,14 @@ void iniciarSesion() => Navigator.of(context).pushReplacementNamed('/home');
 
  //Boton Iniciar Sesion
                         ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            elevation: 5.0,
-                            primary: const Color.fromARGB(242, 246, 110, 73),
-                            shape: const StadiumBorder()
+                            style: ElevatedButton.styleFrom(
+                              padding:const EdgeInsets.all(15),
+                              elevation: 5.0,
+                              primary: const Color.fromARGB(242, 246, 110, 73),
+                            ),
+                            child: const Text("Registrarse", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
+                            onPressed: () => error404(),
                           ),
-                          child: const Text("Registrarse", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
-                          onPressed: () => registrarse(),
-                        ),
-
                       ],
                     )
                     

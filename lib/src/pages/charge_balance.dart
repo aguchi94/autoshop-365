@@ -1,3 +1,4 @@
+import 'package:aguchi_prueba1/src/widgets/appBarPages.dart';
 import 'package:flutter/material.dart';
 import 'package:aguchi_prueba1/src/widgets/customButtonMini.dart';
 
@@ -11,28 +12,11 @@ class CargarSaldo extends StatefulWidget {
 class _CargarSaldoState extends State<CargarSaldo> {
   @override
 
-  void _pagError() => Navigator.of(context).pushNamed('/error404');
+  void _cart() => Navigator.of(context).pushNamed('/cart');
 
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        shadowColor: const Color.fromARGB(233, 94, 201, 234),
-        centerTitle: true,
-        backgroundColor: Color.fromARGB(233, 94, 201, 234),
-        title: const Text("Cargar Saldo"),
-      ),
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color.fromARGB(233, 94, 201, 234),
-              Colors.black26,
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
+    return CustomAppBarPages(
+      title: "Cargar Saldo",
         child: ListView(
           children: <Widget>[
             Container(
@@ -40,7 +24,7 @@ class _CargarSaldoState extends State<CargarSaldo> {
             height: 100,
             margin: const EdgeInsets.all(15),
             decoration: const BoxDecoration(
-              color: Color.fromARGB(233, 94, 201, 234),
+              color: Color.fromARGB(233, 177, 215, 226),
                 borderRadius: BorderRadius.all(Radius.circular(20)),
                 boxShadow: [
                   BoxShadow(
@@ -50,7 +34,7 @@ class _CargarSaldoState extends State<CargarSaldo> {
                 ]),
               child: const ListTile(
                 title: Text("Saldo Actual",textAlign: TextAlign.center, style:TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
-                subtitle: Text("\$500,00",textAlign: TextAlign.center, style:TextStyle(fontSize: 30,fontWeight: FontWeight.bold, color: Colors.white)),
+                subtitle: Text("\$500,00",textAlign: TextAlign.center, style:TextStyle(fontSize: 30,fontWeight: FontWeight.bold, color: Colors.black54)),
               ),
             ),
             Row(
@@ -58,12 +42,33 @@ class _CargarSaldoState extends State<CargarSaldo> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CustomButtonMini(
-                  imageRoute: 'assets/ingresar_dinero.png', 
+                  child:Image.asset('assets/ingresar_dinero.png', width: 170), 
                   onPressed: ()=>{},
                   ),
                 const SizedBox(width: 20),
                 CustomButtonMini(
-                  imageRoute: 'assets/mp_logo.png', 
+                  child: Image.asset('assets/mp_logo.png', width: 170), 
+                  onPressed: ()=>{},
+                  ),
+              ],
+            ),
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CustomButtonMini(
+                  child: const Icon(Icons.sync_alt,
+                        size: 100,
+                        color: Colors.black54,
+                        ),  
+                  onPressed: ()=>{},
+                  ),
+                const SizedBox(width: 20),
+                CustomButtonMini(
+                  child: const Icon(Icons.credit_card,
+                        size: 100,
+                        color: Colors.black54,
+                        ),    
                   onPressed: ()=>{},
                   ),
               ],
@@ -73,13 +78,12 @@ class _CargarSaldoState extends State<CargarSaldo> {
                 style: ElevatedButton.styleFrom(
                   primary: Colors.green
                 ),
-                child: Text("Ir al carrito"),
-                onPressed: ()=> _pagError(),
+                child: const Text("Ir al carrito"),
+                onPressed: ()=> _cart(),
               ),
             )
           ],
         ),
-      ),
-    );
+      );
   }
 }

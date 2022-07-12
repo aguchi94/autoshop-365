@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:aguchi_prueba1/src/widgets/appBarPages.dart';
+
 
 class UserPage extends StatefulWidget {
   const UserPage({ Key? key }) : super(key: key);
@@ -10,31 +12,14 @@ class UserPage extends StatefulWidget {
 class _UserPageState extends State<UserPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        shadowColor: const Color.fromARGB(233, 94, 201, 234),
-        centerTitle: true,
-        backgroundColor: const Color.fromARGB(233, 94, 201, 234),
-        title: const Text("Datos del Usuario"),
-      ),
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color.fromARGB(233, 94, 201, 234),
-              Colors.black26,
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
-        child: ListView(
+    return CustomAppBarPages(
+      title: "Datos del Usuario",
+      child: ListView(
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Card(
-                color: Colors.white38,
+                color: const Color.fromARGB(233, 152, 191, 201),
                 child: Column(
                   children: [
                     //Direccion
@@ -45,7 +30,7 @@ class _UserPageState extends State<UserPage> {
                         ),
                         Icon(Icons.house,
                         size: 50,
-                        color: Colors.red ,
+                        color: Colors.black54,
                         ),
                         SizedBox(
                           width: 50
@@ -64,7 +49,7 @@ class _UserPageState extends State<UserPage> {
                         ),
                         Icon(Icons.person,
                         size: 50,
-                        color: Colors.blue,
+                        color: Colors.black54,
                         ),
                         SizedBox(
                           width: 50
@@ -83,7 +68,7 @@ class _UserPageState extends State<UserPage> {
                         ),
                         Icon(Icons.mail,
                         size: 50,
-                        color: Colors.blue,
+                        color: Colors.black54,
                         ),
                         SizedBox(
                           width: 50
@@ -102,7 +87,7 @@ class _UserPageState extends State<UserPage> {
                         ),
                         Icon(Icons.attach_money,
                         size: 50,
-                        color: Colors.blue,
+                        color: Colors.black54,
                         ),
                         SizedBox(
                           width: 50
@@ -121,7 +106,7 @@ class _UserPageState extends State<UserPage> {
                         ),
                         Icon(Icons.key,
                         size: 50,
-                        color: Colors.blue,
+                        color: Colors.black54,
                         ),
                         SizedBox(
                           width: 50
@@ -130,7 +115,7 @@ class _UserPageState extends State<UserPage> {
                           style: ElevatedButton.styleFrom(
                             primary: Colors.green
                           ),
-                          child: Text("Cambiar Contraseña"),
+                          child: const Text("Cambiar Contraseña"),
                           onPressed: ()=>{},
                         ),
                       ],
@@ -141,7 +126,6 @@ class _UserPageState extends State<UserPage> {
             )
           ]
         )
-      )
-    );
+      );
   }
 }
