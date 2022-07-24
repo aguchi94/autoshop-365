@@ -8,16 +8,22 @@ class HelpButton extends StatelessWidget {
   Widget build(BuildContext context) {
     
     return Container(
-      decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(30)),
+            width: 80,
+            height: 120,
+            margin: const EdgeInsets.all(10),
+            decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(20)),
                 boxShadow: [
                   BoxShadow(
                       color: Colors.black45,
                       offset: Offset(2, 4),
                       blurRadius: 6)
                 ]),
-            child: FloatingActionButton(
-              backgroundColor: const Color.fromARGB(233, 177, 215, 226),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  primary: const Color.fromARGB(220, 220, 220, 220),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0))),
               onPressed: () {
                     showDialog(
                       barrierColor: Colors.white54,
@@ -29,7 +35,7 @@ class HelpButton extends StatelessWidget {
                             height: 100,
                             margin: const EdgeInsets.all(10),
                             decoration: const BoxDecoration(
-                              color: Color.fromARGB(233, 175, 224, 239),
+                              color: Color.fromARGB(220, 220, 220, 220),
                               borderRadius: BorderRadius.all(Radius.circular(15)),
                               boxShadow: [
                                 BoxShadow(
@@ -57,8 +63,8 @@ class HelpButton extends StatelessWidget {
                           );
                           },
               child: const Icon(Icons.question_mark,
-              size: 30,
-              color: Colors.black54,
+              size: 50,
+              color: Color.fromARGB(223, 10, 80, 44),
             ),
       )
     );

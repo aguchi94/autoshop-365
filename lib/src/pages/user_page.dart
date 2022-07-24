@@ -19,7 +19,7 @@ class _UserPageState extends State<UserPage> {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Card(
-                color: const Color.fromARGB(233, 152, 191, 201),
+                color: const Color.fromARGB(220, 220, 220, 220),
                 child: Column(
                   children: [
                     //Direccion
@@ -30,7 +30,7 @@ class _UserPageState extends State<UserPage> {
                         ),
                         Icon(Icons.house,
                         size: 50,
-                        color: Colors.black54,
+                        color: Colors.blue,
                         ),
                         SizedBox(
                           width: 50
@@ -49,7 +49,7 @@ class _UserPageState extends State<UserPage> {
                         ),
                         Icon(Icons.person,
                         size: 50,
-                        color: Colors.black54,
+                        color: Colors.blue,
                         ),
                         SizedBox(
                           width: 50
@@ -68,7 +68,7 @@ class _UserPageState extends State<UserPage> {
                         ),
                         Icon(Icons.mail,
                         size: 50,
-                        color: Colors.black54,
+                        color: Colors.blue
                         ),
                         SizedBox(
                           width: 50
@@ -87,7 +87,7 @@ class _UserPageState extends State<UserPage> {
                         ),
                         Icon(Icons.attach_money,
                         size: 50,
-                        color: Colors.black54,
+                        color: Colors.blue,
                         ),
                         SizedBox(
                           width: 50
@@ -106,7 +106,7 @@ class _UserPageState extends State<UserPage> {
                         ),
                         Icon(Icons.key,
                         size: 50,
-                        color: Colors.black54,
+                        color: Colors.blue,
                         ),
                         SizedBox(
                           width: 50

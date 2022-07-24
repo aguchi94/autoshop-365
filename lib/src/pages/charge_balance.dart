@@ -24,7 +24,7 @@ class _CargarSaldoState extends State<CargarSaldo> {
             height: 100,
             margin: const EdgeInsets.all(15),
             decoration: const BoxDecoration(
-              color: Color.fromARGB(233, 177, 215, 226),
+              color: Color.fromARGB(220, 220, 220, 220),
                 borderRadius: BorderRadius.all(Radius.circular(20)),
                 boxShadow: [
                   BoxShadow(

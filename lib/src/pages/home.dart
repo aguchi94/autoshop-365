@@ -1,6 +1,6 @@
-import 'package:aguchi_prueba1/src/widgets/appBar.dart';
+import 'package:aguchi_prueba1/src/widgets/userButton.dart';
 import 'package:flutter/material.dart';
-import 'package:aguchi_prueba1/src/pages/barcode_scan.dart';
+import 'package:aguchi_prueba1/src/widgets/appBar.dart';
 import 'package:aguchi_prueba1/src/widgets/customButton.dart';
 import 'package:aguchi_prueba1/src/widgets/helpButton.dart';
 
@@ -24,6 +24,7 @@ class _HomePageState extends State<HomePage> {
   void _cargarSaldo() => Navigator.of(context).pushNamed('/cargar');
   void _userPage() => Navigator.of(context).pushNamed('/user');
   void _cart() => Navigator.of(context).pushNamed('/cart');
+  void _scannerPage() => Navigator.of(context).pushNamed('/scannerpage');
 
   @override
   Widget build(BuildContext context) {
@@ -35,10 +36,9 @@ class _HomePageState extends State<HomePage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CustomButton(
-                      imageRoute: 'assets/usuarioNN.png',
-                      onPressed: () => _userPage()
-                      ),
+                  UserButton(
+                    onPressed: _userPage
+                    ),
                   const HelpButton(
                   info: "Presione aquí para ver la informacion del usuario",
                   imageRoute: 'assets/usuarioNN.png',
@@ -51,7 +51,10 @@ class _HomePageState extends State<HomePage> {
            Row(
             mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  BarcodeScan(),
+                  CustomButton(
+                      imageRoute: 'assets/carrito_vacioNN.png',
+                      onPressed: () => _scannerPage()
+                      ),
 
                   const HelpButton(
                   info: "Presione aquí para iniciar una compra",
@@ -67,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   CustomButton(
                       imageRoute: 'assets/carrito_vacioNN.png',
-                      onPressed: () => _cart()
+                      onPressed: () => _scannerPage()
                       ),
                   const HelpButton(
                   info: "Presione aquí para ver la lista de productos en el carrito",
