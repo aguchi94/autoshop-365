@@ -30,21 +30,6 @@ class _CustomSizeScannerPageState extends State<CustomSizeScannerPage> {
                 openManual: true,
               ),
             ),
-            Expanded(
-              flex: 2,
-              child: Column(
-                children: [
-                  Text("PRODUCTOS"),
-                  Container(
-                    width: 250,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      color: Colors.blue
-                    ),
-                    child: Text(_code),
-                  )
-              ],)
-              )
           ],
         ),
       );

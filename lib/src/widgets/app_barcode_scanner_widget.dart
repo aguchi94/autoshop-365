@@ -171,6 +171,7 @@ class _BarcodeScannerWidget extends StatefulWidget {
 class _AppBarcodeScannerWidgetState extends State<_BarcodeScannerWidget> {
   late ScannerController _scannerController;
   bool isSwitched = false;
+  int counter = 0;
 
   @override
   void initState() {
@@ -205,40 +206,78 @@ class _AppBarcodeScannerWidgetState extends State<_BarcodeScannerWidget> {
     return Column(
       children: <Widget>[
         Expanded(
+          flex: 2,
           child: _getScanWidgetByPlatform(),
         ),
-        Row(
-          children: [
-            const Padding(
-              padding:  EdgeInsets.all(8.0),
-              child:  Text("Flash"),
-            ),
-            Switch(
-              value: isSwitched,
-              activeColor: Colors.blue,
-              onChanged: (value){
-                _scannerController.openFlash();
-                setState(() {
-                  isSwitched = value;
-                });
-                _scannerController.closeFlash();
-                setState(() {
-                  isSwitched = value;
-                });
-              },
-            ),
-            const SizedBox(width: 40,),
-            ElevatedButton(
-                onPressed: () {
-                  _scannerController.stopCameraPreview();
-                  _scannerController.stopCamera();
-                },
-                child: Icon(Icons.no_photography,
-                        color: Colors.white,
+        Expanded(
+          flex:2,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Card(
+                      color: const Color.fromARGB(220, 220, 220, 220),
+                          child: Column(
+                            children: [
+                              Card(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: ListTile(
+                                    title: Text("producto", textAlign: TextAlign.center, style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold)),
+                                    subtitle: Text("precio", textAlign: TextAlign.center,style: TextStyle(color: Colors.green,fontSize: 30,fontWeight: FontWeight.bold)),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(height: 25),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                Text("Cantidad:", style: TextStyle(fontSize: 25),),
+                                const SizedBox(width: 20),
+                                FloatingActionButton(
+                                  child: Icon(Icons.remove),
+                                  onPressed: () {
+                                    setState(() => counter--
+                                    );
+                                  }
+                                  ),
+                                  const SizedBox(width: 15),
+                                  Text('$counter', style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold)),
+                                const SizedBox(width: 15),
+                                FloatingActionButton(
+                                  child: Icon(Icons.add),
+                                  onPressed: () {
+                                    setState(() 
+                                     => counter++ 
+                                    );
+                                  }
+                                  ),
+                                ]
+                              ),
+                              const SizedBox(height: 25),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.red
+                                    ),
+                                    child: Text("Quitar"),
+                                    onPressed:(){},
+                                    ),
+                                    const SizedBox(width: 20),
+                                  ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.green
+                                    ),
+                                    child: Text("Agregar"),
+                                    onPressed:(){} ,
+                                    )
+                                ],
+                              )
+                            ],
+                          ),
                         ),
-                        ),
-          ],
-        ),
+                  ),
+            )
       ],
     );
   }
