@@ -221,8 +221,8 @@ class _AppBarcodeScannerWidgetState extends State<_BarcodeScannerWidget> {
                                 child: Padding(
                                   padding: const EdgeInsets.all(10.0),
                                   child: ListTile(
-                                    title: Text("producto", textAlign: TextAlign.center, style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold)),
-                                    subtitle: Text("precio", textAlign: TextAlign.center,style: TextStyle(color: Colors.green,fontSize: 30,fontWeight: FontWeight.bold)),
+                                    title: Text("Producto", textAlign: TextAlign.center, style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold)),
+                                    subtitle: Text("Precio", textAlign: TextAlign.center,style: TextStyle(color: Colors.green,fontSize: 30,fontWeight: FontWeight.bold)),
                                   ),
                                 ),
                               ),
